@@ -17,7 +17,8 @@ public class TestSimpleList {
             System.out.println("6 - Maior elemento");
             System.out.println("7 - Menor elemento");
             System.out.println("8 - Média dos elementos");
-            System.out.println("9 - Sair");
+            System.out.println("9 - Ordenar lista");
+            System.out.println("10 - Sair");
             System.out.print("Escolha uma opção: ");
             int option = scanner.nextInt();
 
@@ -48,6 +49,9 @@ public class TestSimpleList {
                 double average = simpleList.average();
                 System.out.println("Média dos elementos: " + average);
             } else if (option == 9) {
+                simpleList.ordenate();
+                System.out.println("Lista ordenada");
+            }else if (option == 10) {
                 break;
             } else {
                 System.out.println("Opção inválida");

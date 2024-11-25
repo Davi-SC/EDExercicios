@@ -102,6 +102,26 @@ public class SimpleList {
         return (double) sum / this.size;
     }
 
+    public void ordenate() {
+        int temp ;
+        if (this.head == null) {
+            throw new RuntimeException("Lista vazia");
+        }
+        Node current = this.head;
+        while (current != null) {
+            Node next = current.getNext();
+            while (next != null) {
+                if (current.getElement() > next.getElement()) {
+                    temp = current.getElement();
+                    current.setElement(next.getElement());
+                    next.setElement(temp);
+                }
+                next = next.getNext();
+            }
+            current = current.getNext();
+        }
+    }
+
     @Override
     public String toString() {
         return "[" + head + "]";
